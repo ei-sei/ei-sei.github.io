@@ -19,6 +19,14 @@
   display: block;
 }
 
+.yellow-gradient {
+  background: #ffd700;
+  background: linear-gradient(-90deg, #ffd700 0%, rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(-90deg, #ffd700 0%, rgba(60, 51, 80, 0) 100%);
+}
+
+
+
 .black-gradient {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
