@@ -1,11 +1,11 @@
 Model Information:
-* title:	Aston Martin V8 Vantage V600 LimitedEdition 1998
-* source:	https://sketchfab.com/3d-models/aston-martin-v8-vantage-v600-limitededition-1998-4f2d9b51a0d44ea186d8354246379941
-* author:	ᗩᒪE᙭. Kᗩ.🚗 (https://sketchfab.com/Alex.Ka.)
+* title:	BMW M3 E46 GTR
+* source:	https://sketchfab.com/3d-models/bmw-m3-e46-gtr-66314ceeeaf24508824dd574ad04aed2
+* author:	BadKarma™ (https://sketchfab.com/890244234)
 
 Model License:
-* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
-* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Aston Martin V8 Vantage V600 LimitedEdition 1998" (https://sketchfab.com/3d-models/aston-martin-v8-vantage-v600-limitededition-1998-4f2d9b51a0d44ea186d8354246379941) by ᗩᒪE᙭. Kᗩ.🚗 (https://sketchfab.com/Alex.Ka.) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+This work is based on "BMW M3 E46 GTR" (https://sketchfab.com/3d-models/bmw-m3-e46-gtr-66314ceeeaf24508824dd574ad04aed2) by BadKarma™ (https://sketchfab.com/890244234) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
