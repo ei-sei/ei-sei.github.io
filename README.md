@@ -1,7 +1,14 @@
 # Welcome to my website portfolio
 
-This was made with assistant from JavaScript Mastery
-The BMW E46 model is open-source by BadKarma
+## Tools and Technologies
+
+    React
+    ThreeJS
 
 
-https://wall.alphacoders.com/big.php?i=1325121
+## Credits/Sources
+
+I would like to thank and credit the following sources for the assets used to creating this website.
+
+    Background - Black Aesthetic Wallpaper from Wallpaper Abyss
+    3D Model - Forest House, by peachyroyalty from Sketchfab
