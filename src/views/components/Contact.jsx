@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styles from "./Contact.module.css";
 
 const SUBMISSION_TIMEOUT = 5000;
@@ -44,26 +45,26 @@ export default function Contact() {
               <div className={styles.icon}>✉️</div>
               <div>
                 <h3>Email</h3>
-                <a href="mailto:hello@example.com">hello@example.com</a>
+                <a href="sk.ahm2019@gmail.com">sk.ahm2019@gmail.com</a>
               </div>
             </div>
 
             <div className={styles.infoItem}>
-              <div className={styles.icon}>💼</div>
+              <FaLinkedin className={styles.icon} />
               <div>
                 <h3>LinkedIn</h3>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                  linkedin.com/in/yourprofile
+                <a href="https://www.linkedin.com/in/sheikhkhaled-ahmed/" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/sheikhkhaled-ahmed/
                 </a>
               </div>
             </div>
 
             <div className={styles.infoItem}>
-              <div className={styles.icon}>🐙</div>
+              <FaGithub className={styles.icon} />
               <div>
                 <h3>GitHub</h3>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                  github.com/yourprofile
+                <a href="https://github.com/ei-sei" target="_blank" rel="noopener noreferrer">
+                  github.com/ei-sei
                 </a>
               </div>
             </div>
