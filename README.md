@@ -242,25 +242,4 @@ npm run build
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-Feel free to fork, modify, and customize this portfolio for your own use!
-
-## 📞 Support
-
-For issues or questions:
-1. Check the component files for implementation details
-2. Review the MVC structure for code organization
-3. Refer to the CSS modules for styling patterns
-
----
-
-**Built with ❤️ for cloud engineers** | Ready for production deployment
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is open source
