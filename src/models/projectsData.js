@@ -125,4 +125,34 @@ export const projectsData = [
     ],
     thumbnail: "/images/flask-api-screenshot.png",
   },
+  {
+    id: 5,
+    title: "Linux Lab Notebook",
+    shortDescription:
+      "Hands-on Linux command-line documentation covering system administration, troubleshooting, and cross-distribution workflows on Fedora and Ubuntu.",
+    fullDescription:
+      "A comprehensive lab notebook documenting practical Linux skills across multiple distributions. Covers system administration tasks on Fedora 43 (local) and Ubuntu 22.04 (AWS EC2), including user management, file permissions, process monitoring, package management, and network diagnostics. Organized into challenges, capstone projects, configs, and reference materials.",
+    technologies: ["Linux", "Bash", "Fedora", "Ubuntu", "AWS EC2", "SELinux"],
+    features: [
+      "User and group account management",
+      "File permissions and ownership configuration",
+      "Process management and monitoring",
+      "Package management with dnf and apt",
+      "Log file analysis using grep and awk",
+      "System resource performance monitoring",
+      "Network troubleshooting and diagnostics",
+      "Cross-distribution workflows (RHEL/Fedora and Debian/Ubuntu)",
+    ],
+    challenges:
+      "Working across different Linux distributions with varying package managers, firewall tools, and security models while building consistent administration practices.",
+    solutions:
+      "Documented distribution-specific approaches side by side, practiced on both local Fedora and cloud-based Ubuntu environments, and organized learnings into structured reference materials for quick lookup.",
+    githubUrl: "https://github.com/ei-sei/DevOps/tree/linux-lab-notebook",
+    liveUrl: "",
+    images: [
+      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800",
+      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800",
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400",
+  },
 ];
