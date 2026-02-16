@@ -129,9 +129,9 @@ export const projectsData = [
     id: 5,
     title: "Linux Lab Notebook",
     shortDescription:
-      "Hands-on Linux command-line documentation covering system administration, troubleshooting, and cross-distribution workflows on Fedora and Ubuntu.",
+      "Hands-on Linux command-line documentation covering system administration, troubleshooting, OverTheWire wargames, and cross-distribution workflows on Fedora and Ubuntu.",
     fullDescription:
-      "A comprehensive lab notebook documenting practical Linux skills across multiple distributions. Covers system administration tasks on Fedora 43 (local) and Ubuntu 22.04 (AWS EC2), including user management, file permissions, process monitoring, package management, and network diagnostics. Organized into challenges, capstone projects, configs, and reference materials.",
+      "A comprehensive lab notebook documenting practical Linux skills across multiple distributions. Covers system administration tasks on Fedora 43 (local) and Ubuntu 22.04 (AWS EC2), including user management, file permissions, process monitoring, package management, and network diagnostics. Also includes OverTheWire Bandit wargame challenges for hands-on security practice. Organized into challenges, capstone projects, and wargame solutions.",
     technologies: ["Linux", "Bash", "Fedora", "Ubuntu", "AWS EC2", "SELinux"],
     features: [
       "User and group account management",
@@ -141,12 +141,13 @@ export const projectsData = [
       "Log file analysis using grep and awk",
       "System resource performance monitoring",
       "Network troubleshooting and diagnostics",
+      "OverTheWire Bandit wargame challenges",
       "Cross-distribution workflows (RHEL/Fedora and Debian/Ubuntu)",
     ],
     challenges:
-      "Working across different Linux distributions with varying package managers, firewall tools, and security models while building consistent administration practices.",
+      "Working across different Linux distributions with varying package managers, firewall tools, and security models while building consistent administration practices and tackling security-focused wargame challenges.",
     solutions:
-      "Documented distribution-specific approaches side by side, practiced on both local Fedora and cloud-based Ubuntu environments, and organized learnings into structured reference materials for quick lookup.",
+      "Documented distribution-specific approaches side by side, practiced on both local Fedora and cloud-based Ubuntu environments, completed OverTheWire Bandit challenges to strengthen command-line security skills, and organized learnings into structured materials for quick lookup.",
     githubUrl: "https://github.com/ei-sei/DevOps/tree/linux-lab-notebook",
     liveUrl: "",
     images: [
