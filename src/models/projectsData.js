@@ -155,4 +155,40 @@ export const projectsData = [
     ],
     thumbnail: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400",
   },
+  {
+    id: 6,
+    title: "Penetration Testing: Metasploitable Report",
+    shortDescription:
+      "Comprehensive penetration testing engagement against a Metasploitable VM, documenting two critical exploits achieving full root access.",
+    fullDescription:
+      "A professional penetration testing report documenting a security assessment against a Metasploitable virtual machine in an isolated VirtualBox lab environment. Demonstrates the full attack lifecycle from reconnaissance and vulnerability scanning to exploitation and post-compromise activities, resulting in complete system compromise with root privileges.",
+    technologies: [
+      "Kali Linux",
+      "Metasploit",
+      "Nmap",
+      "Nessus",
+      "VirtualBox",
+    ],
+    features: [
+      "Network reconnaissance and port enumeration with Nmap",
+      "Vulnerability assessment and scanning with Nessus",
+      "Apache Tomcat AJP exploitation (CVE-2020-1938, CVSS 9.8)",
+      "OpenSSH weak RNG brute force (CVE-2008-0166, CVSS 7.8)",
+      "Post-exploitation and persistence techniques",
+      "Credential compromise and backdoor account creation",
+      "Professional report with findings and remediation steps",
+      "Isolated lab environment setup with VirtualBox",
+    ],
+    challenges:
+      "Identifying exploitable vulnerabilities across multiple services, chaining exploits to escalate from service-level to root access, and documenting findings in a professional report format.",
+    solutions:
+      "Used Nmap and Nessus for thorough enumeration and vulnerability discovery, leveraged Metasploit Framework for reliable exploit delivery, escalated privileges through weak credential brute forcing, and documented the entire methodology with evidence and remediation recommendations.",
+    githubUrl: "https://github.com/ei-sei/pentest-metasploitable-report",
+    liveUrl: "",
+    images: [
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
+      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800",
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
+  },
 ];
