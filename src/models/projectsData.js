@@ -192,4 +192,35 @@ export const projectsData = [
     ],
     thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
   },
+  {
+    id: 7,
+    title: "Nginx EC2 & Cloudflare DNS Lab",
+    shortDescription:
+      "Deployed an Nginx web server on AWS EC2 with a custom domain configured via Cloudflare DNS, covering networking fundamentals from OSI model to cloud architecture.",
+    fullDescription:
+      "A hands-on DevOps lab documenting the deployment of an Nginx web server on an AWS EC2 instance with a custom domain routed through Cloudflare DNS. Accompanied by comprehensive networking reference material covering the full spectrum from OSI and TCP/IP models to cloud networking patterns, container networking, and real-world diagnostic techniques.",
+    technologies: ["AWS EC2", "Nginx", "Cloudflare", "DNS", "Linux", "Bash"],
+    features: [
+      "Nginx web server deployment on AWS EC2",
+      "Custom domain configuration with Cloudflare DNS",
+      "OSI and TCP/IP model analysis",
+      "IP addressing, subnetting, and CIDR notation",
+      "TCP, UDP, HTTP/HTTPS, SSH, DNS, and DHCP protocols",
+      "AWS security groups and network ACLs",
+      "NAT, port forwarding, and load balancing",
+      "Network diagnostics with ping, traceroute, dig, ss, and tcpdump",
+      "Docker and Kubernetes container networking",
+    ],
+    challenges:
+      "Configuring DNS propagation through Cloudflare, securing the EC2 instance with appropriate security groups, and understanding the full networking stack from L1 to L7.",
+    solutions:
+      "Set up Cloudflare as the authoritative DNS provider with correct A records pointing to the EC2 public IP, configured AWS security groups to allow HTTP/HTTPS/SSH traffic, and documented networking fundamentals as reference material alongside the lab.",
+    githubUrl: "https://github.com/ei-sei/DevOps/tree/networking",
+    liveUrl: "",
+    images: [
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400",
+  },
 ];
