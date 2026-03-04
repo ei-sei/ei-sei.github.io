@@ -47,11 +47,11 @@ export default function Hero({ totalProjects = 3, uniqueTechs = 5 }) {
           <div className={styles.stats}>
             <div className={styles.stat}>
               <div className={styles.statNumber}>{totalProjects}+</div>
-              <div className={styles.statLabel}>Major Projects</div>
+              <div className={styles.statLabel}>Projects</div>
             </div>
             <div className={styles.stat}>
               <div className={styles.statNumber}>{uniqueTechs}+</div>
-              <div className={styles.statLabel}>Cloud Platforms</div>
+              <div className={styles.statLabel}>Technologies</div>
             </div>
             <div className={styles.stat}>
               <div className={styles.statNumber}>100%</div>
