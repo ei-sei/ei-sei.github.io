@@ -59,7 +59,8 @@ export const projectsData = [
       "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800",
       "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800",
     ],
-    thumbnail: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400",
+    thumbnail:
+      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400",
   },
   {
     id: 3,
@@ -68,13 +69,7 @@ export const projectsData = [
       "Comprehensive penetration testing engagement against a Metasploitable VM, documenting two critical exploits achieving full root access.",
     fullDescription:
       "A professional penetration testing report documenting a security assessment against a Metasploitable virtual machine in an isolated VirtualBox lab environment. Demonstrates the full attack lifecycle from reconnaissance and vulnerability scanning to exploitation and post-compromise activities, resulting in complete system compromise with root privileges.",
-    technologies: [
-      "Kali Linux",
-      "Metasploit",
-      "Nmap",
-      "Nessus",
-      "VirtualBox",
-    ],
+    technologies: ["Kali Linux", "Metasploit", "Nmap", "Nessus", "VirtualBox"],
     features: [
       "Network reconnaissance and port enumeration with Nmap",
       "Vulnerability assessment and scanning with Nessus",
@@ -95,7 +90,8 @@ export const projectsData = [
       "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
       "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800",
     ],
-    thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
+    thumbnail:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800",
   },
   {
     id: 4,
@@ -126,7 +122,8 @@ export const projectsData = [
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
     ],
-    thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400",
+    thumbnail:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400",
   },
   {
     id: 5,
@@ -135,7 +132,14 @@ export const projectsData = [
       "Multi-container web application with Flask and Redis visit counter, orchestrated with Docker Compose and load balanced via Nginx.",
     fullDescription:
       "A hands-on Docker lab documenting containerization fundamentals through a practical multi-container project. Builds a Flask web app that tracks page visits using Redis with AOF persistence, orchestrated via Docker Compose with an Nginx reverse proxy and horizontal scaling. Accompanied by six detailed notes covering Docker setup, core concepts, Dockerfiles, networking, volumes, and best practices.",
-    technologies: ["Docker", "Docker Compose", "Flask", "Redis", "Nginx", "Python"],
+    technologies: [
+      "Docker",
+      "Docker Compose",
+      "Flask",
+      "Redis",
+      "Nginx",
+      "Python",
+    ],
     features: [
       "Multi-container orchestration with Docker Compose",
       "Flask web app with Redis visit counter",
@@ -156,16 +160,25 @@ export const projectsData = [
       "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800",
       "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=800",
     ],
-    thumbnail: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400",
+    thumbnail:
+      "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400",
   },
   {
     id: 6,
-    title: "Stoic Quotes Generator",
+    title: "Quote Generator",
     shortDescription:
-      "Containerized Flask app that serves random Stoic quotes with Redis-backed visit and quote request counters, deployed on AWS EC2.",
+      "Containerized Flask app that serves random Stoic quotes with Redis-backed visit and quote request counters, deployed on AWS EC2 (brsti.uk).",
     fullDescription:
       "A Dockerized web application that delivers random Stoic quotes via a Flask API, backed by Redis for persistent visit and quote counters. Orchestrated with Docker Compose, fronted by an Nginx reverse proxy, and deployable to AWS EC2 with Redis AOF persistence ensuring data survives container restarts.",
-    technologies: ["Python", "Flask", "Redis", "Nginx", "Docker", "Docker Compose", "AWS EC2"],
+    technologies: [
+      "Python",
+      "Flask",
+      "Redis",
+      "Nginx",
+      "Docker",
+      "Docker Compose",
+      "AWS EC2",
+    ],
     features: [
       "Random Stoic quote generation from a JSON dataset",
       "Global quote request counter stored in Redis",
@@ -186,6 +199,7 @@ export const projectsData = [
       "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800",
       "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800",
     ],
-    thumbnail: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400",
+    thumbnail:
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400",
   },
 ];
