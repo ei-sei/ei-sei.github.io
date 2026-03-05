@@ -167,9 +167,9 @@ export const projectsData = [
     id: 6,
     title: "Quote Generator",
     shortDescription:
-      "Containerized Flask app that serves random Stoic quotes with Redis-backed visit and quote request counters, deployed on AWS EC2 (brsti.uk).",
+      "Containerized Flask app that serves random quotes with Redis-backed visit and quote request counters, deployed on AWS EC2 (https://brsti.uk/).",
     fullDescription:
-      "A Dockerized web application that delivers random Stoic quotes via a Flask API, backed by Redis for persistent visit and quote counters. Orchestrated with Docker Compose, fronted by an Nginx reverse proxy, and deployable to AWS EC2 with Redis AOF persistence ensuring data survives container restarts.",
+      "A Dockerized web application that delivers random quotes via a Flask API, backed by Redis for persistent visit and quote counters. Orchestrated with Docker Compose, fronted by an Nginx reverse proxy, and deployable to AWS EC2 with Redis AOF persistence ensuring data survives container restarts.",
     technologies: [
       "Python",
       "Flask",
@@ -180,7 +180,7 @@ export const projectsData = [
       "AWS EC2",
     ],
     features: [
-      "Random Stoic quote generation from a JSON dataset",
+      "Random quote generation from a JSON dataset",
       "Global quote request counter stored in Redis",
       "Home page visitor tracking via Redis",
       "Redis AOF persistence with named Docker volumes",
@@ -195,11 +195,7 @@ export const projectsData = [
       "Enabled Redis AOF with named Docker volumes for durability, configured Nginx upstream to proxy requests to Flask, and set up EC2 security groups to expose port 80 while keeping Redis internal to the Docker network.",
     githubUrl: "https://github.com/ei-sei/quotes",
     liveUrl: "",
-    images: [
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800",
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800",
-    ],
-    thumbnail:
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400",
+    images: ["/images/quote.png"],
+    thumbnail: "/images/quote.png",
   },
 ];
