@@ -158,6 +158,34 @@ export const projectsData = [
     ],
     thumbnail: "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400",
   },
-
-
+  {
+    id: 6,
+    title: "Stoic Quotes Generator",
+    shortDescription:
+      "Containerized Flask app that serves random Stoic quotes with Redis-backed visit and quote request counters, deployed on AWS EC2.",
+    fullDescription:
+      "A Dockerized web application that delivers random Stoic quotes via a Flask API, backed by Redis for persistent visit and quote counters. Orchestrated with Docker Compose, fronted by an Nginx reverse proxy, and deployable to AWS EC2 with Redis AOF persistence ensuring data survives container restarts.",
+    technologies: ["Python", "Flask", "Redis", "Nginx", "Docker", "Docker Compose", "AWS EC2"],
+    features: [
+      "Random Stoic quote generation from a JSON dataset",
+      "Global quote request counter stored in Redis",
+      "Home page visitor tracking via Redis",
+      "Redis AOF persistence with named Docker volumes",
+      "Nginx reverse proxy configuration",
+      "Multi-container orchestration with Docker Compose",
+      "AWS EC2 cloud deployment support",
+      "Environment variable configuration via .env",
+    ],
+    challenges:
+      "Ensuring Redis data persists across container restarts, configuring Nginx as a reverse proxy for Flask, and deploying the multi-container stack to AWS EC2 with correct security group rules.",
+    solutions:
+      "Enabled Redis AOF with named Docker volumes for durability, configured Nginx upstream to proxy requests to Flask, and set up EC2 security groups to expose port 80 while keeping Redis internal to the Docker network.",
+    githubUrl: "https://github.com/ei-sei/quotes",
+    liveUrl: "",
+    images: [
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800",
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400",
+  },
 ];
