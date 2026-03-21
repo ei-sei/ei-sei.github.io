@@ -198,4 +198,41 @@ export const projectsData = [
     images: ["/images/quote.png"],
     thumbnail: "/images/quote.png",
   },
+  {
+    id: 7,
+    title: "AWS VPC & Networking",
+    shortDescription:
+      "Custom VPC with public/private subnets, bastion host access, NAT Gateway, and CloudWatch monitoring on AWS.",
+    fullDescription:
+      "An AWS infrastructure lab demonstrating how to build a custom Virtual Private Cloud with segregated public and private subnets, a bastion host for secure SSH access, NAT Gateway for private subnet egress, and CloudWatch Agent integration for monitoring. Covers security groups, route tables, IAM roles, and SSH agent forwarding through a jump server.",
+    technologies: [
+      "AWS VPC",
+      "AWS EC2",
+      "Internet Gateway",
+      "NAT Gateway",
+      "Security Groups",
+      "Route Tables",
+      "CloudWatch",
+      "IAM",
+    ],
+    features: [
+      "Custom VPC with 10.0.0.0/16 CIDR block",
+      "Segregated public (10.0.1.0/24) and private (10.0.2.0/24) subnets",
+      "Internet Gateway for public subnet access",
+      "NAT Gateway with Elastic IP for private subnet egress",
+      "Bastion host pattern with SSH agent forwarding",
+      "Security groups restricting SSH and HTTP to specific IPs",
+      "CloudWatch Agent for metrics and log collection",
+      "IAM roles with CloudWatchAgentServerPolicy",
+    ],
+    challenges:
+      "Configuring separate route tables for public and private subnets, implementing secure bastion host access with SSH agent forwarding, and setting up CloudWatch Agent with correct IAM permissions.",
+    solutions:
+      "Created distinct route tables directing public traffic through IGW and private traffic through NAT Gateway, configured SSH agent forwarding for secure key management across the bastion hop, and attached IAM roles with CloudWatchAgentServerPolicy to EC2 instances for monitoring.",
+    githubUrl:
+      "https://github.com/ei-sei/DevOps/tree/aws/lab/vpc-and-networking",
+    liveUrl: "",
+    images: ["/images/vpc-networking-architecture.png"],
+    thumbnail: "/images/vpc-networking-architecture.png",
+  },
 ];
