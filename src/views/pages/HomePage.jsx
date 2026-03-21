@@ -1,3 +1,4 @@
+// Sheikh Khaled Ahmed (ei-sei) — All rights reserved
 import { useMemo } from "react";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";

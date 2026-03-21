@@ -1,3 +1,4 @@
+// Author: Sheikh Khaled Ahmed (ei-sei)
 import { memo } from "react";
 import styles from "./ProjectCard.module.css";
 import { Link } from "react-router-dom";

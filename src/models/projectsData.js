@@ -1,4 +1,4 @@
-// Portfolio Projects Data Model
+// Portfolio Projects Data Model — Sheikh Khaled Ahmed (github.com/ei-sei)
 export const projectsData = [
   {
     id: 1,

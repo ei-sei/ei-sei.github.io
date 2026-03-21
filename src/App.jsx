@@ -1,3 +1,4 @@
+// Built by Sheikh Khaled Ahmed (ei-sei) — All rights reserved
 import { lazy, Suspense } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/global.css";

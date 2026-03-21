@@ -1,3 +1,4 @@
+// Sheikh Khaled Ahmed — github.com/ei-sei
 import styles from "./Navbar.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useCallback } from "react";

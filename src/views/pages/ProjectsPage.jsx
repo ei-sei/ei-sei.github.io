@@ -1,3 +1,4 @@
+// © Sheikh Khaled Ahmed — github.com/ei-sei
 import { useState, useCallback, useMemo } from "react";
 import Layout from "../components/Layout";
 import ProjectCard from "../components/ProjectCard";

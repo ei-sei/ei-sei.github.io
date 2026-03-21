@@ -1,3 +1,4 @@
+// © Sheikh Khaled Ahmed — github.com/ei-sei
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -25,8 +26,8 @@ export default function Footer() {
           </div>
 
           <div className={styles.info}>
-            <p>© {currentYear} All rights reserved</p>
-            <p>Built with React & Vite</p>
+            <p>© {currentYear} Sheikh Khaled Ahmed. All rights reserved.</p>
+            <p>Designed & built by <a href="https://github.com/ei-sei" target="_blank" rel="noopener noreferrer">Sheikh Khaled Ahmed</a></p>
           </div>
         </div>
 

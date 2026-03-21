@@ -1,3 +1,4 @@
+// Portfolio by Sheikh Khaled Ahmed — github.com/ei-sei
 import styles from "./ProjectDetail.module.css";
 import { useParams, Link } from "react-router-dom";
 import { useState, useCallback, useEffect } from "react";

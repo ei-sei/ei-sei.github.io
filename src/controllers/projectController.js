@@ -1,4 +1,4 @@
-// Project Controller - Business Logic
+// Project Controller - Business Logic | Sheikh Khaled Ahmed (ei-sei)
 import { projectsData } from "../models/projectsData.js";
 
 // Cache for all technologies to avoid recalculation

@@ -1,3 +1,4 @@
+// Sheikh Khaled Ahmed — github.com/ei-sei
 import styles from "./Skills.module.css";
 import { skillCategories } from "../../models/skillsData";
 

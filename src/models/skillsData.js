@@ -1,4 +1,4 @@
-// Skills Data Model
+// Skills Data Model — Sheikh Khaled Ahmed (github.com/ei-sei)
 export const skillCategories = [
   {
     name: "Cloud Platforms",

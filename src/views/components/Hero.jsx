@@ -1,3 +1,4 @@
+// Author: Sheikh Khaled Ahmed (ei-sei)
 import styles from "./Hero.module.css";
 import { Link } from "react-router-dom";
 import { useCallback } from "react";
