@@ -235,4 +235,45 @@ export const projectsData = [
     images: ["/images/vpc-networking-architecture.png"],
     thumbnail: "/images/vpc-networking-architecture.png",
   },
+  {
+    id: 8,
+    title: "AWS Application Load Balancer",
+    shortDescription:
+      "Highly available web infrastructure on AWS using an Application Load Balancer distributing traffic across multi-AZ EC2 instances, with HTTPS termination and Auto Scaling.",
+    fullDescription:
+      "An AWS infrastructure lab that deploys a scalable, fault-tolerant web application behind an Application Load Balancer. EC2 instances are deployed across multiple Availability Zones in private subnets, with the ALB in public subnets routing HTTP/HTTPS traffic. Extends the base setup with ACM-provisioned HTTPS, automatic HTTP-to-HTTPS redirect, Auto Scaling Groups for dynamic capacity, and CloudFlare DNS for custom domain management. Session Manager replaces the need for a bastion host or SSH key management.",
+    technologies: [
+      "AWS EC2",
+      "Application Load Balancer",
+      "Target Groups",
+      "AWS Certificate Manager",
+      "Auto Scaling Groups",
+      "Security Groups",
+      "IAM",
+      "Systems Manager",
+      "CloudFlare DNS",
+    ],
+    features: [
+      "Multi-AZ EC2 deployment behind an internet-facing ALB",
+      "Target Group health checks ensuring traffic only reaches healthy instances",
+      "Security groups enforcing ALB-only access to EC2 instances",
+      "HTTPS termination via ACM with automatic HTTP-to-HTTPS redirect",
+      "Auto Scaling Group with min 2, max 4 instances for dynamic capacity",
+      "Session Manager for secure shell access without SSH keys or bastion host",
+      "Custom domain integration via CloudFlare DNS",
+      "User data scripts serving differentiated HTML for traffic distribution verification",
+    ],
+    challenges:
+      "Enforcing that EC2 instances only accept traffic from the ALB and not directly from the internet, provisioning and validating ACM certificates, and configuring Auto Scaling alongside the ALB target group.",
+    solutions:
+      "Layered security groups so only the ALB security group is whitelisted on EC2 instances, validated ACM certificates via DNS, and configured the Auto Scaling Group to register new instances automatically into the ALB target group.",
+    githubUrl:
+      "https://github.com/ei-sei/DevOps/tree/aws/lab/02-application-load-balancer",
+    liveUrl: "",
+    images: [
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/02-lab/ALB-architecture.png",
+    ],
+    thumbnail:
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/02-lab/ALB-architecture.png",
+  },
 ];
