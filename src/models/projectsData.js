@@ -276,4 +276,45 @@ export const projectsData = [
     thumbnail:
       "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/02-lab/ALB-architecture.png",
   },
+  {
+    id: 9,
+    title: "S3, CloudFront & CDN Deployment",
+    shortDescription:
+      "Production-grade static website hosted on S3, distributed globally via CloudFront CDN with HTTPS, custom domain, security headers, and a GitHub Actions CI/CD pipeline.",
+    fullDescription:
+      "An AWS infrastructure lab deploying a static website through a full production pipeline: S3 for object storage, CloudFront for global edge caching and HTTPS delivery, ACM for SSL/TLS certificates, and Cloudflare DNS for custom domain management. Extended with GitHub Actions for automated S3 syncing and cache invalidation on every push, CloudFront Functions for injecting security headers (HSTS, X-Frame-Options, XSS protection) at the edge, and Lambda@Edge for clean URL rewriting without exposing file structure.",
+    technologies: [
+      "Amazon S3",
+      "Amazon CloudFront",
+      "AWS Certificate Manager",
+      "CloudFront Functions",
+      "Lambda@Edge",
+      "IAM",
+      "GitHub Actions",
+      "Cloudflare DNS",
+    ],
+    features: [
+      "Static website hosting via S3 with public access and custom error pages",
+      "CloudFront distribution across global edge locations with HTTPS",
+      "ACM SSL/TLS certificate with DNS validation via Cloudflare",
+      "Automatic HTTP-to-HTTPS redirect on CloudFront",
+      "GitHub Actions CI/CD pipeline for automated S3 sync and cache invalidation",
+      "Security headers (HSTS, X-Frame-Options, X-Content-Type-Options) via CloudFront Functions",
+      "Clean URL rewriting via Lambda@Edge (e.g. /about → /about/index.html)",
+      "Scoped IAM service user for GitHub Actions with least-privilege S3 and CloudFront permissions",
+    ],
+    challenges:
+      "ACM certificates must be provisioned in us-east-1 to work with CloudFront regardless of where other infrastructure lives. Cache staleness after deployments required automated invalidation. Clean URLs needed edge-level request rewriting without modifying the origin.",
+    solutions:
+      "Explicitly provisioned the ACM certificate in us-east-1, triggered CloudFront cache invalidation at the end of every GitHub Actions workflow, and used Lambda@Edge to intercept and rewrite extension-less requests before CloudFront served content.",
+    githubUrl:
+      "https://github.com/ei-sei/DevOps/tree/aws/lab/03-s3-cloudfront-route53",
+    liveUrl: "",
+    images: [
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/03-lab/architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/03-lab/test3.png",
+    ],
+    thumbnail:
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/03-lab/architecture.png",
+  },
 ];
