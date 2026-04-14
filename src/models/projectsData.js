@@ -317,4 +317,46 @@ export const projectsData = [
     thumbnail:
       "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/03-lab/architecture.png",
   },
+  {
+    id: 10,
+    title: "Serverless API with Lambda & API Gateway",
+    shortDescription:
+      "Fully serverless REST API on AWS accepting POST and GET requests to store and retrieve student records in DynamoDB, secured with API keys, usage plans, and WAF rate-limiting.",
+    fullDescription:
+      "An AWS serverless lab building a REST API entirely without servers. API Gateway exposes POST /submit and GET /students endpoints, proxying requests to Lambda functions written in Python. Lambda reads and writes from a DynamoDB table, auto-generating UUIDs and UTC timestamps on submission. IAM execution roles follow least-privilege principles with hand-crafted inline policies scoped to exact table ARNs and specific DynamoDB actions only. Extended with API key enforcement via usage plans (10 req/s rate limit, 1,000/month quota), and an AWS WAF Web ACL attached to the API Gateway stage for IP-based rate-limiting and DDoS protection.",
+    technologies: [
+      "AWS API Gateway",
+      "AWS Lambda",
+      "Amazon DynamoDB",
+      "IAM",
+      "Amazon CloudWatch",
+      "AWS WAF",
+      "Python",
+      "boto3",
+    ],
+    features: [
+      "POST /submit endpoint writing student records (name, module, UUID, timestamp) to DynamoDB",
+      "GET /students endpoint scanning and returning all records as JSON",
+      "Least-privilege IAM inline policies scoped to specific DynamoDB actions and table ARN",
+      "API key enforcement with usage plans (10 req/s burst, 1,000 req/month quota)",
+      "AWS WAF Web ACL with rate-limiting blocking IPs exceeding 100 requests per 5 minutes",
+      "Lambda proxy integration passing raw HTTP request including headers and body",
+      "CORS enabled on all API Gateway resources",
+      "CloudWatch Logs for Lambda invocation observability",
+    ],
+    challenges:
+      "Avoiding over-permissive IAM policies while keeping Lambda able to interact with DynamoDB, configuring API Gateway to enforce API key authentication, and attaching WAF to the API Gateway stage without impacting legitimate traffic.",
+    solutions:
+      "Hand-crafted inline IAM policies granting only the specific DynamoDB action needed (PutItem or Scan) scoped to the exact table ARN, configured usage plans with API key linkage on each method, and deployed a WAF Web ACL with a rate-based rule targeting the API Gateway stage.",
+    githubUrl:
+      "https://github.com/ei-sei/DevOps/tree/aws/lab/04-serverless-api-with-lambda-iam-api-gateway",
+    liveUrl: "",
+    images: [
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/test3.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/test-DynamoDB.png",
+    ],
+    thumbnail:
+      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/architecture.png",
+  },
 ];
