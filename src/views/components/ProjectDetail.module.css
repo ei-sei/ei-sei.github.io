@@ -269,6 +269,24 @@
   align-items: center;
 }
 
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.videoFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .btnGithub {
   background: var(--color-bg-tertiary);
   color: var(--color-accent);
@@ -279,6 +297,18 @@
   background: var(--color-accent);
   color: var(--color-bg);
   transform: translateY(-3px);
+}
+
+.btnVideo {
+  background: linear-gradient(135deg, #ff3d3d, #cc0000);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+}
+
+.btnVideo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 0, 0, 0.4);
 }
 
 .btnLive {
@@ -345,6 +375,7 @@
   }
 
   .btnGithub,
+  .btnVideo,
   .btnLive {
     width: 100%;
     justify-content: center;

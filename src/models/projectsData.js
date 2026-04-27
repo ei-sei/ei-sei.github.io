@@ -1,4 +1,4 @@
-// Portfolio Projects Data Model — Sheikh Khaled Ahmed (github.com/ei-sei)
+// Portfolio Projects Data Model - Sheikh Khaled Ahmed (github.com/ei-sei)
 export const projectsData = [
   {
     id: 1,
@@ -358,5 +358,54 @@ export const projectsData = [
     ],
     thumbnail:
       "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/architecture.png",
+  },
+  {
+    id: 11,
+    title: "Watched",
+    shortDescription:
+      "Self-hosted, full-stack production app for tracking shows, movies, anime, and books. Built because nothing else did exactly what I wanted, running on my own VPS with real users.",
+    fullDescription:
+      "Watched exists because I wanted it to. It's a media tracker covering shows, movies, anime, and books, self-hosted on my own VPS, invite-only, and used daily. The backend is Go with PostgreSQL, the frontend React + TypeScript with Tailwind, and the whole stack ships via Docker Compose through a GitHub Actions CI/CD pipeline. Search fans out in parallel across four external APIs, deduplicates and ranks results before returning. The app is offline-first: once loaded, reads never hit the network and everything lives in IndexedDB via Dexie. It's installable as a PWA on mobile. Access is gated behind invite-only JWT auth with refresh token rotation. An admin console handles user and invite management, and a runtime feature flag system lets me toggle features without a deployment.",
+    technologies: [
+      "Go",
+      "PostgreSQL",
+      "React + TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "PWA / IndexedDB",
+      "Docker",
+      "GitHub Actions",
+    ],
+    apis: [
+      "TMDB",
+      "MAL / Jikan",
+      "AniList",
+      "Google Books / OpenLibrary",
+    ],
+    features: [
+      "Multi-source search with parallel fan-out across 4 external APIs, deduplication, and ranking",
+      "Offline-first reads via IndexedDB, reads never hit the network",
+      "Installable PWA with service worker for mobile",
+      "Invite-only auth with JWT access tokens and refresh token rotation",
+      "Admin console for user management and invite generation",
+      "Feature flags toggled at runtime by superadmin, no deployment required",
+      "Stats and trending dashboards",
+      "CI/CD pipeline via GitHub Actions deploying to self-hosted VPS through GHCR",
+      "HTTPS via Let's Encrypt and certbot",
+    ],
+    challenges:
+      "Multi-source search across APIs with inconsistent data structures, duplicates across providers, and varying response times. Offline-first sync required careful cache management to avoid stale reads. JWT refresh token rotation needed to be race-condition safe under concurrent requests.",
+    solutions:
+      "Parallel fan-out fires all API requests simultaneously; a deduplication and ranking layer normalises results before returning. Dexie/IndexedDB stores the full dataset locally so reads are instant and network-independent. Refresh token rotation uses a single in-flight promise so concurrent requests share one refresh cycle instead of competing.",
+    githubUrl: "",
+    liveUrl: "https://brsti.uk",
+    videoUrl: "https://youtu.be/ODx3OcgXz4E",
+    images: [
+      "/images/watched-dashboard.png",
+      "/images/watched-search.png",
+      "/images/watched-trending.png",
+      "/images/watched-watchlist.png",
+    ],
+    thumbnail: "/images/watched-dashboard.png",
   },
 ];

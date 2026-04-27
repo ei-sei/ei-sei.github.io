@@ -38,6 +38,11 @@ export default function ProjectDetail() {
     );
   }
 
+  const embedUrl = project.videoUrl
+    ? project.videoUrl.replace("youtu.be/", "www.youtube.com/embed/") +
+      "?rel=0&modestbranding=1"
+    : null;
+
   return (
     <article className={styles.detail}>
       <div className={styles.header}>
@@ -50,14 +55,26 @@ export default function ProjectDetail() {
 
       <div className={styles.container}>
         <div className={styles.mainContent}>
-          {/* Hero Image */}
+          {/* Hero Image or Video */}
           <section className={styles.heroImage}>
-            <img
-              src={project.thumbnail}
-              alt={project.title}
-              className={styles.image}
-              loading="eager"
-            />
+            {embedUrl ? (
+              <div className={styles.videoWrapper}>
+                <iframe
+                  src={embedUrl}
+                  title={`${project.title} demo`}
+                  className={styles.videoFrame}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <img
+                src={project.thumbnail}
+                alt={project.title}
+                className={styles.image}
+                loading="eager"
+              />
+            )}
           </section>
 
           {/* Overview */}
@@ -80,21 +97,23 @@ export default function ProjectDetail() {
           </section>
 
           {/* Screenshots Gallery */}
-          <section className={styles.section}>
-            <h2>Project Gallery</h2>
-            <div className={styles.gallery}>
-              {project.images.map((image, index) => (
-                <img
-                  key={image}
-                  src={image}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  className={styles.galleryImage}
-                  loading="lazy"
-                  onClick={() => openLightbox(image)}
-                />
-              ))}
-            </div>
-          </section>
+          {project.images.length > 0 && (
+            <section className={styles.section}>
+              <h2>Project Gallery</h2>
+              <div className={styles.gallery}>
+                {project.images.map((image, index) => (
+                  <img
+                    key={image}
+                    src={image}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    className={styles.galleryImage}
+                    loading="lazy"
+                    onClick={() => openLightbox(image)}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Lightbox Modal */}
           {lightboxImage && (
@@ -141,18 +160,45 @@ export default function ProjectDetail() {
             </div>
           </section>
 
+          {/* External APIs */}
+          {project.apis?.length > 0 && (
+            <section className={styles.section}>
+              <h2>External APIs</h2>
+              <div className={styles.techGrid}>
+                {project.apis.map((api) => (
+                  <div key={api} className={styles.techItem}>
+                    <span className={styles.techIcon}>🔌</span>
+                    <span>{api}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* CTA */}
           <section className={styles.cta}>
             <h2>Want to see more?</h2>
             <div className={styles.ctaButtons}>
-              <a
-                href={project.githubUrl}
-                className={styles.btnGithub}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Code on GitHub
-              </a>
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  className={styles.btnGithub}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Code on GitHub
+                </a>
+              )}
+              {project.videoUrl && (
+                <a
+                  href={project.videoUrl}
+                  className={styles.btnVideo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Watch Demo
+                </a>
+              )}
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
