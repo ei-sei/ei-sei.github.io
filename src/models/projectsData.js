@@ -311,4 +311,44 @@ export const projectsData = [
     ],
     thumbnail: "/images/watched-dashboard.png",
   },
+  {
+    id: 12,
+    title: "Threat Composer on ECS Fargate",
+    shortDescription:
+      "Containerized deployment of AWS Threat Composer on ECS Fargate using Terraform, GitHub Actions CI/CD, HTTPS via ACM, and a custom domain.",
+    fullDescription:
+      "A production-grade deployment of the open-source AWS Threat Composer threat modeling tool onto AWS ECS Fargate. Infrastructure is fully managed with Terraform split into five reusable modules covering VPC networking, ECR, ACM certificate provisioning, ALB, and ECS. A GitHub Actions pipeline builds the Docker image, pushes it to ECR, and re-deploys the Fargate service on every push to main. HTTPS is enforced via an ACM certificate validated through Cloudflare DNS, with traffic flowing through the ALB into containers running in private subnets.",
+    technologies: [
+      "Terraform",
+      "Docker",
+      "AWS ECS Fargate",
+      "AWS ECR",
+      "Application Load Balancer",
+      "AWS Certificate Manager",
+      "AWS VPC",
+      "IAM",
+      "GitHub Actions",
+      "Cloudflare DNS",
+    ],
+    features: [
+      "Five reusable Terraform modules: vpc, ecr, acm, alb, ecs",
+      "ECS Fargate running containers in private subnets with NAT Gateway egress",
+      "ALB handling HTTPS termination on port 443",
+      "ACM certificate with DNS validation via Cloudflare",
+      "GitHub Actions CI/CD pipeline building, pushing to ECR, and redeploying on every push to main",
+      "Custom domain via Cloudflare CNAME pointing to ALB DNS endpoint",
+      "Private subnet isolation with public ALB as the only ingress point",
+    ],
+    challenges:
+      "ACM returned the certificate ARN before validation completed, causing the ALB listener to fail attaching a pending cert. The Cloudflare Terraform provider couldn't resolve within the ACM module due to a namespace issue. The custom subdomain had no DNS records pointing to the ALB.",
+    solutions:
+      "Fixed the cert timing by referencing the aws_acm_certificate_validation resource output instead of the cert directly, ensuring the ALB only attaches a fully issued certificate. Resolved the provider by explicitly specifying the full cloudflare/cloudflare namespace in the module. Added a Cloudflare CNAME record pointing the subdomain to the ALB DNS endpoint.",
+    githubUrl: "https://github.com/ei-sei/threat-composer-ecs",
+    liveUrl: "",
+    images: [
+      "https://raw.githubusercontent.com/ei-sei/threat-composer-ecs/main/assets/ecs-architecture.png",
+    ],
+    thumbnail:
+      "https://raw.githubusercontent.com/ei-sei/threat-composer-ecs/main/assets/ecs-architecture.png",
+  },
 ];
