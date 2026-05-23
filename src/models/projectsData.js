@@ -1,68 +1,6 @@
 // Portfolio Projects Data Model - Sheikh Khaled Ahmed (github.com/ei-sei)
 export const projectsData = [
   {
-    id: 1,
-    title: "Simple Flask REST API",
-    shortDescription:
-      "RESTful API for user management built with Flask, Flask-RESTful, and SQLite database.",
-    fullDescription:
-      "A lightweight, well-structured REST API demonstrating best practices in Python backend development. Features complete CRUD operations for user management, input validation, error handling, and JSON serialization using SQLAlchemy ORM with SQLite database.",
-    technologies: ["Flask", "Flask-RESTful", "SQLAlchemy", "SQLite", "Python"],
-    features: [
-      "RESTful API endpoints for user management",
-      "SQLite database integration with SQLAlchemy ORM",
-      "Full CRUD operations (Create, Read, Update, Delete)",
-      "Input validation and comprehensive error handling",
-      "JSON serialization with Flask-RESTful marshalling",
-      "User model with unique constraints",
-      "Clean separation of concerns",
-      "Easy database initialization script",
-    ],
-    challenges:
-      "Implementing proper error handling, validating user input, managing database relationships, and creating a maintainable API structure.",
-    solutions:
-      "Used Flask-RESTful for request/response marshalling, implemented validation decorators, leveraged SQLAlchemy ORM for database operations, and structured endpoints with resource-based routing.",
-    githubUrl: "https://github.com/ei-sei/simple-flask-api",
-    liveUrl: "http://127.0.0.1:5000",
-    images: [
-      "/images/flask-api-screenshot.png",
-      "/images/flask-api-screenshot2.png",
-    ],
-    thumbnail: "/images/flask-api-screenshot.png",
-  },
-  {
-    id: 2,
-    title: "Linux Lab Notebook",
-    shortDescription:
-      "Hands-on Linux command-line documentation covering system administration, troubleshooting, OverTheWire wargames, and cross-distribution workflows on Fedora and Ubuntu.",
-    fullDescription:
-      "A comprehensive lab notebook documenting practical Linux skills across multiple distributions. Covers system administration tasks on Fedora 43 (local) and Ubuntu 22.04 (AWS EC2), including user management, file permissions, process monitoring, package management, and network diagnostics. Also includes OverTheWire Bandit wargame challenges for hands-on security practice. Organized into challenges, capstone projects, and wargame solutions.",
-    technologies: ["Linux", "Bash", "Fedora", "Ubuntu", "AWS EC2", "SELinux"],
-    features: [
-      "User and group account management",
-      "File permissions and ownership configuration",
-      "Process management and monitoring",
-      "Package management with dnf and apt",
-      "Log file analysis using grep and awk",
-      "System resource performance monitoring",
-      "Network troubleshooting and diagnostics",
-      "OverTheWire Bandit wargame challenges",
-      "Cross-distribution workflows (RHEL/Fedora and Debian/Ubuntu)",
-    ],
-    challenges:
-      "Working across different Linux distributions with varying package managers, firewall tools, and security models while building consistent administration practices and tackling security-focused wargame challenges.",
-    solutions:
-      "Documented distribution-specific approaches side by side, practiced on both local Fedora and cloud-based Ubuntu environments, completed OverTheWire Bandit challenges to strengthen command-line security skills, and organized learnings into structured materials for quick lookup.",
-    githubUrl: "https://github.com/ei-sei/DevOps/tree/linux-lab-notebook",
-    liveUrl: "",
-    images: [
-      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800",
-      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800",
-    ],
-    thumbnail:
-      "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400",
-  },
-  {
     id: 3,
     title: "Penetration Testing: Metasploitable Report",
     shortDescription:
@@ -162,41 +100,6 @@ export const projectsData = [
     ],
     thumbnail:
       "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=400",
-  },
-  {
-    id: 6,
-    title: "Quote Generator",
-    shortDescription:
-      "Containerized Flask app that serves random quotes with Redis-backed visit and quote request counters, deployed on AWS EC2 (https://brsti.uk/).",
-    fullDescription:
-      "A Dockerized web application that delivers random quotes via a Flask API, backed by Redis for persistent visit and quote counters. Orchestrated with Docker Compose, fronted by an Nginx reverse proxy, and deployable to AWS EC2 with Redis AOF persistence ensuring data survives container restarts.",
-    technologies: [
-      "Python",
-      "Flask",
-      "Redis",
-      "Nginx",
-      "Docker",
-      "Docker Compose",
-      "AWS EC2",
-    ],
-    features: [
-      "Random quote generation from a JSON dataset",
-      "Global quote request counter stored in Redis",
-      "Home page visitor tracking via Redis",
-      "Redis AOF persistence with named Docker volumes",
-      "Nginx reverse proxy configuration",
-      "Multi-container orchestration with Docker Compose",
-      "AWS EC2 cloud deployment support",
-      "Environment variable configuration via .env",
-    ],
-    challenges:
-      "Ensuring Redis data persists across container restarts, configuring Nginx as a reverse proxy for Flask, and deploying the multi-container stack to AWS EC2 with correct security group rules.",
-    solutions:
-      "Enabled Redis AOF with named Docker volumes for durability, configured Nginx upstream to proxy requests to Flask, and set up EC2 security groups to expose port 80 while keeping Redis internal to the Docker network.",
-    githubUrl: "https://github.com/ei-sei/quotes",
-    liveUrl: "",
-    images: ["/images/quote.png"],
-    thumbnail: "/images/quote.png",
   },
   {
     id: 7,
