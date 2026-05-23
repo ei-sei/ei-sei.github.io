@@ -96,9 +96,15 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <Link to="/projects" className={styles.btnLink} onClick={() => setIsOpen(false)}>
-              View All
-            </Link>
+            <a
+              href="https://hashnode.com/@ei-sei"
+              className={styles.btnLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
+            </a>
           </li>
         </ul>
       </div>
