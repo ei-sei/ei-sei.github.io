@@ -4,6 +4,8 @@ Hi, I'm Sheikh Khaled Ahmed - a DevOps and Cloud Engineer passionate about build
 
 The site itself is built with React and Vite, following an MVC architecture with a dark-themed UI, responsive design, and project filtering.
 
+https://ei-sei.github.io/
+
 ## Projects
 
 - **Penetration Testing: Metasploitable Report** - Comprehensive pentest engagement documenting critical exploits against a Metasploitable VM
