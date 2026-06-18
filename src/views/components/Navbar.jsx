@@ -97,7 +97,7 @@ export default function Navbar() {
           </li>
           <li>
             <a
-              href="https://hashnode.com/@ei-sei"
+              href="https://ska-cloud.hashnode.dev/"
               className={styles.btnLink}
               target="_blank"
               rel="noopener noreferrer"
