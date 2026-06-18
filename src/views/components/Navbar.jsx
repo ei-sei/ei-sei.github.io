@@ -71,20 +71,6 @@ export default function Navbar() {
 
         <ul className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
           <li>
-            <Link
-              to="/"
-              onClick={(e) => {
-                setIsOpen(false);
-                if (location.pathname === "/") {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-              }}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
             <a
               href="#projects"
               onClick={(e) => handleSectionClick(e, "projects")}
