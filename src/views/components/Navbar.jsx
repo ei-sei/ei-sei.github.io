@@ -43,7 +43,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          Sheikh Khaled Ahmed
+          SHEIKH KHALED AHMED
         </Link>
 
         <button

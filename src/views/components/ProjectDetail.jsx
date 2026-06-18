@@ -88,10 +88,7 @@ export default function ProjectDetail() {
             <h2>Key Features</h2>
             <ul className={styles.featuresList}>
               {project.features.map((feature) => (
-                <li key={feature}>
-                  <span className={styles.checkmark}>✓</span>
-                  {feature}
-                </li>
+                <li key={feature}>{feature}</li>
               ))}
             </ul>
           </section>
@@ -152,10 +149,9 @@ export default function ProjectDetail() {
             <h2>Technologies Used</h2>
             <div className={styles.techGrid}>
               {project.technologies.map((tech) => (
-                <div key={tech} className={styles.techItem}>
-                  <span className={styles.techIcon}>🔧</span>
-                  <span>{tech}</span>
-                </div>
+                <span key={tech} className={styles.techItem}>
+                  {tech}
+                </span>
               ))}
             </div>
           </section>
@@ -166,10 +162,9 @@ export default function ProjectDetail() {
               <h2>External APIs</h2>
               <div className={styles.techGrid}>
                 {project.apis.map((api) => (
-                  <div key={api} className={styles.techItem}>
-                    <span className={styles.techIcon}>🔌</span>
-                    <span>{api}</span>
-                  </div>
+                  <span key={api} className={styles.techItem}>
+                    {api}
+                  </span>
                 ))}
               </div>
             </section>

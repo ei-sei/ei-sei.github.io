@@ -1,6 +1,5 @@
 // © Sheikh Khaled Ahmed (ei-sei)
 import { useState, useEffect, useCallback } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styles from "./Contact.module.css";
 
 const SUBMISSION_TIMEOUT = 5000;
@@ -36,22 +35,20 @@ export default function Contact() {
     <section id="contact" className={styles.contact}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2>Get In Touch</h2>
+          <h2>Contact</h2>
           <p>Let's discuss your cloud infrastructure needs</p>
         </div>
 
         <div className={styles.content}>
           <div className={styles.info}>
             <div className={styles.infoItem}>
-              <div className={styles.icon}>✉️</div>
               <div>
                 <h3>Email</h3>
-                <a href="sk.ahm2019@gmail.com">sk.ahm2019@gmail.com</a>
+                <a href="mailto:sk.ahm2019@gmail.com">sk.ahm2019@gmail.com</a>
               </div>
             </div>
 
             <div className={styles.infoItem}>
-              <FaLinkedin className={styles.icon} />
               <div>
                 <h3>LinkedIn</h3>
                 <a href="https://www.linkedin.com/in/sheikhkhaled-ahmed/" target="_blank" rel="noopener noreferrer">
@@ -61,7 +58,6 @@ export default function Contact() {
             </div>
 
             <div className={styles.infoItem}>
-              <FaGithub className={styles.icon} />
               <div>
                 <h3>GitHub</h3>
                 <a href="https://github.com/ei-sei" target="_blank" rel="noopener noreferrer">
@@ -117,7 +113,7 @@ export default function Contact() {
 
             {submitted && (
               <div className={styles.successMessage}>
-                ✓ Message sent successfully! I'll get back to you soon.
+                Message sent successfully. I'll get back to you soon.
               </div>
             )}
           </form>

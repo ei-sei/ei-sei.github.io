@@ -7,35 +7,19 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.brand}>
-            <h3 className={styles.logo}>Sheikh Khaled Ahmed</h3>
-            <p>Cloud Engineer Portfolio</p>
-          </div>
-
-          <div className={styles.links}>
-            <a href="https://github.com/ei-sei" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/sheikhkhaled-ahmed/" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              Twitter
-            </a>
-          </div>
-
-          <div className={styles.info}>
-            <p>© {currentYear} Sheikh Khaled Ahmed. All rights reserved.</p>
-            <p>Designed & built by <a href="https://github.com/ei-sei" target="_blank" rel="noopener noreferrer">Sheikh Khaled Ahmed</a></p>
-          </div>
+        <div className={styles.links}>
+          <a href="https://github.com/ei-sei" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/sheikhkhaled-ahmed/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="mailto:sk.ahm2019@gmail.com">Email</a>
         </div>
 
-        <div className={styles.divider}></div>
-
-        <div className={styles.bottom}>
-          <p>Designed & Developed with passion for cloud infrastructure</p>
-        </div>
+        <p className={styles.copyright}>
+          © {currentYear} Sheikh Khaled Ahmed. All rights reserved.
+        </p>
       </div>
     </footer>
   );
