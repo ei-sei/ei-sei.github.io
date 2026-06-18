@@ -9,7 +9,7 @@ export default function ProjectsPage() {
   const [selectedTechs, setSelectedTechs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const allTechs = useMemo(() => projectController.getAllTechnologies(), []);
+  const allTechs = useMemo(() => projectController.getFilterableSkills(), []);
   const filteredProjects = useMemo(
     () =>
       projectController.getFilteredProjects({
