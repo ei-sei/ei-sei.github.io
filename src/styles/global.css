@@ -34,6 +34,7 @@
   --border-radius-md: 0;
   --border-radius-lg: 0;
   --border-radius-xl: 0;
+  --border-radius-btn: 4px;
 
   --shadow-sm: none;
   --shadow-md: none;
@@ -46,15 +47,15 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #2b2926;
-  --color-fg: #f0ebe2;
-  --color-text-primary: #ece7df;
-  --color-text-secondary: #c9c3ba;
-  --color-text-muted: #9a948c;
-  --color-accent: #8fb295;
-  --color-accent-dark: #aecbb1;
-  --color-border: #44403a;
-  --color-tag-bg: #3a372f;
+  --color-bg: #0f0d0a;
+  --color-fg: #e8e6e2;
+  --color-text-primary: #e8e6e2;
+  --color-text-secondary: #c5c2ba;
+  --color-text-muted: #a8a5a0;
+  --color-accent: #8fb49f;
+  --color-accent-dark: #aed4c0;
+  --color-border: #2a2622;
+  --color-tag-bg: #1a1815;
 }
 
 * {

@@ -57,44 +57,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  font-size: 15px;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
   color: var(--color-text-muted);
-  background: var(--color-tag-bg);
+  background: none;
   border: none;
-  border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease,
-    transform 0.15s ease;
 }
 
 .themeToggle:hover {
-  color: #fff;
-  background: var(--color-accent);
-  transform: scale(1.08);
-}
-
-.themeToggle:active {
-  transform: scale(0.92);
+  color: var(--color-accent);
 }
 
 .themeIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: themeIconIn 0.3s ease;
-}
-
-@keyframes themeIconIn {
-  from {
-    opacity: 0;
-    transform: rotate(-80deg) scale(0.4);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
 }
 
 .hamburger {

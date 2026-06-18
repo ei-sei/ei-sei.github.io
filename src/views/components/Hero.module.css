@@ -46,6 +46,7 @@
   font-size: 0.9375rem;
   text-decoration: none;
   display: inline-block;
+  border-radius: var(--border-radius-btn);
 }
 
 .btnPrimary {

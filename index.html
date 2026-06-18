@@ -14,9 +14,15 @@
   <body>
     <!-- Portfolio designed and built by Sheikh Khaled Ahmed (github.com/ei-sei) -->
     <script>
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var dark = stored
+          ? stored === "dark"
+          : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (dark) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
     </script>
     <div id="root" data-author="Sheikh Khaled Ahmed"></div>
     <script type="module" src="/src/main.jsx"></script>
