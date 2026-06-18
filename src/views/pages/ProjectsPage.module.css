@@ -126,6 +126,14 @@
   flex-direction: column;
 }
 
+.grid > a {
+  margin-bottom: 1.5rem;
+}
+
+.grid > a:last-child {
+  margin-bottom: 0;
+}
+
 .noResults {
   text-align: center;
   padding: var(--spacing-2xl);
