@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #ffffff;
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -19,7 +19,7 @@
 .logo {
   font-size: 14px;
   font-weight: 600;
-  color: #000;
+  color: var(--color-fg);
   letter-spacing: 0.02em;
 }
 
@@ -45,12 +45,29 @@
 }
 
 .nav a:hover {
-  color: #000;
+  color: var(--color-fg);
   text-decoration: none;
 }
 
 .btnLink {
   border-bottom: 1px solid currentColor;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  background: none;
+  border: 1px solid var(--color-border);
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.themeToggle:hover {
+  color: var(--color-fg);
+  border-color: var(--color-fg);
 }
 
 .hamburger {
@@ -67,7 +84,7 @@
 .hamburger span {
   width: 22px;
   height: 2px;
-  background: #000;
+  background: var(--color-fg);
   transition: all var(--transition-base);
 }
 
@@ -93,7 +110,7 @@
     top: 100%;
     right: 0;
     left: 0;
-    background: #ffffff;
+    background: var(--color-bg);
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-lg);

@@ -21,14 +21,14 @@
 }
 
 .backBtn:hover {
-  color: #000;
+  color: var(--color-fg);
   text-decoration: none;
 }
 
 .title {
   font-size: 2.5rem;
   margin-bottom: var(--spacing-md);
-  color: #000;
+  color: var(--color-fg);
 }
 
 .intro {
@@ -99,7 +99,7 @@
 .featuresList li {
   font-size: 14px;
   color: var(--color-text-secondary);
-  border-left: 3px solid #000;
+  border-left: 3px solid var(--color-fg);
   padding-left: var(--spacing-md);
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
@@ -159,7 +159,7 @@
 .challengeBox,
 .solutionBox {
   padding: var(--spacing-lg);
-  border-left: 3px solid #000;
+  border-left: 3px solid var(--color-fg);
 }
 
 .subtitle {
@@ -209,12 +209,12 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  border: 1px solid #000;
+  border: 1px solid var(--color-fg);
 }
 
 .btnGithub {
-  background: #fff;
-  color: #000;
+  background: var(--color-bg);
+  color: var(--color-fg);
 }
 
 .btnGithub:hover {
@@ -223,8 +223,8 @@
 }
 
 .btnVideo {
-  background: #fff;
-  color: #000;
+  background: var(--color-bg);
+  color: var(--color-fg);
 }
 
 .btnVideo:hover {
@@ -233,12 +233,12 @@
 }
 
 .btnLive {
-  background: #000;
-  color: #fff;
+  background: var(--color-fg);
+  color: var(--color-bg);
 }
 
 .btnLive:hover {
-  background: #1f2937;
+  opacity: 0.85;
   text-decoration: none;
 }
 
@@ -256,7 +256,7 @@
 .notFound a {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  border: 1px solid #000;
+  border: 1px solid var(--color-fg);
   font-weight: 500;
 }
 

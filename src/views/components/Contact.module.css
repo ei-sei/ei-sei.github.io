@@ -34,7 +34,7 @@
 }
 
 .infoItem a {
-  color: #000;
+  color: var(--color-fg);
   font-weight: 500;
   font-size: 14px;
 }

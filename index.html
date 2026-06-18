@@ -13,6 +13,11 @@
   </head>
   <body>
     <!-- Portfolio designed and built by Sheikh Khaled Ahmed (github.com/ei-sei) -->
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
     <div id="root" data-author="Sheikh Khaled Ahmed"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
