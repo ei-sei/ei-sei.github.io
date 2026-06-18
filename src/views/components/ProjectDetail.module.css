@@ -117,6 +117,8 @@
 
 .galleryImage {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border: 1px solid var(--color-border);
   display: block;
 }
