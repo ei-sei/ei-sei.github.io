@@ -234,6 +234,7 @@
 
 .btnLive:hover {
   background: var(--color-accent-dark);
+  color: #fff;
   text-decoration: none;
 }
 
