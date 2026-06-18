@@ -34,7 +34,11 @@
 }
 
 .infoItem a {
-  color: var(--color-fg);
+  color: var(--color-accent);
   font-weight: 500;
   font-size: 14px;
+}
+
+.infoItem a:hover {
+  color: var(--color-accent-dark);
 }

@@ -40,14 +40,14 @@
   width: 100%;
   padding: 0.65rem;
   background: var(--color-bg);
-  border: 1px solid var(--color-fg);
+  border: 1px solid var(--color-border);
   color: var(--color-text-primary);
   font-size: 0.9375rem;
 }
 
 .searchBox input:focus {
   outline: none;
-  background: var(--color-tag-bg);
+  border-color: var(--color-accent);
 }
 
 .filterGroup {
@@ -79,22 +79,22 @@
 }
 
 .filterBtn:hover {
-  border-color: var(--color-fg);
-  color: var(--color-fg);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .filterBtn.active {
-  background: var(--color-fg);
-  border-color: var(--color-fg);
-  color: var(--color-bg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
 }
 
 .clearBtn,
 .resetBtn {
   padding: 0.5rem 1.25rem;
   background: var(--color-bg);
-  border: 1px solid var(--color-fg);
-  color: var(--color-fg);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
   font-weight: 500;
   font-size: 0.875rem;
   cursor: pointer;
@@ -103,7 +103,8 @@
 
 .clearBtn:hover,
 .resetBtn:hover {
-  background: var(--color-tag-bg);
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
 }
 
 .resultCount {

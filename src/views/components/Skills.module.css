@@ -16,15 +16,17 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 }
 
 .category {
-  padding-top: 0;
+  background: var(--color-tag-bg);
+  border: 1px solid var(--color-border);
+  padding: 1.25rem;
 }
 
 .categoryTitle {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-fg);
   margin-bottom: var(--spacing-md);
@@ -39,6 +41,7 @@
 .skillItem {
   font-size: 13px;
   color: var(--color-text-secondary);
+  line-height: 1.8;
 }
 
 @media (max-width: 1024px) {
@@ -50,6 +53,6 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
   }
 }

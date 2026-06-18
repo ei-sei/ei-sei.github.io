@@ -5,19 +5,21 @@
 
 /* Global Styles */
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #000000;
-  --color-text-primary: #1f2937;
-  --color-text-secondary: #374151;
-  --color-text-muted: #6b7280;
-  --color-accent: #000000;
-  --color-border: #e5e7eb;
-  --color-tag-bg: #f3f4f6;
-  --color-error: #dc2626;
-  --color-success: #16a34a;
+  --color-bg: #faf8f5;
+  --color-fg: #3d3a36;
+  --color-text-primary: #3d3a36;
+  --color-text-secondary: #5a5754;
+  --color-text-muted: #8b8680;
+  --color-accent: #7a9a7f;
+  --color-accent-dark: #5a7a5f;
+  --color-border: #e5e3df;
+  --color-tag-bg: #f5f3f0;
+  --color-error: #b5564a;
+  --color-success: #5a7a5f;
 
   --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
+  --font-family-heading: Georgia, "Times New Roman", serif;
   --font-family-mono: "SF Mono", "Courier New", monospace;
 
   --spacing-xs: 0.25rem;
@@ -44,14 +46,15 @@
 }
 
 [data-theme="dark"] {
-  --color-bg: #0a0a0a;
-  --color-fg: #fafafa;
-  --color-text-primary: #e5e7eb;
-  --color-text-secondary: #d1d5db;
-  --color-text-muted: #9ca3af;
-  --color-accent: #fafafa;
-  --color-border: #2a2a2a;
-  --color-tag-bg: #1a1a1a;
+  --color-bg: #2b2926;
+  --color-fg: #f0ebe2;
+  --color-text-primary: #ece7df;
+  --color-text-secondary: #c9c3ba;
+  --color-text-muted: #9a948c;
+  --color-accent: #8fb295;
+  --color-accent-dark: #aecbb1;
+  --color-border: #44403a;
+  --color-tag-bg: #3a372f;
 }
 
 * {
@@ -68,7 +71,7 @@ body {
   font-family: var(--font-family-body);
   background-color: var(--color-bg);
   color: var(--color-text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
   transition: background-color var(--transition-base), color var(--transition-base);
 }
 
@@ -85,13 +88,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: var(--font-family-heading);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--color-fg);
 }
 
 h1 {
   font-size: 3rem;
+  font-weight: 700;
 }
 
 h2 {
@@ -117,11 +122,12 @@ p {
 
 /* Links */
 a {
-  color: var(--color-fg);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--color-accent-dark);
   text-decoration: underline;
 }
 
@@ -136,7 +142,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-fg);
+  background: var(--color-accent);
 }
 
 /* Media Queries */
