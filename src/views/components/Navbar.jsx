@@ -125,7 +125,9 @@ export default function Navbar() {
               onClick={toggleTheme}
               aria-label="Toggle dark mode"
             >
-              {theme === "light" ? <FiMoon /> : <FiSun />}
+              <span key={theme} className={styles.themeIcon}>
+                {theme === "light" ? <FiMoon /> : <FiSun />}
+              </span>
             </button>
           </li>
         </ul>
