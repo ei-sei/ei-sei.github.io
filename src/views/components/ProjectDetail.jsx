@@ -4,6 +4,29 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useCallback, useEffect } from "react";
 import { projectController } from "../../controllers/projectController";
 
+const ACRONYMS = new Set([
+  "aws", "vpc", "ecs", "alb", "nlb", "api", "cdn", "iam", "acm", "dns",
+  "ec2", "s3", "waf", "cli", "vpn", "pwa", "jwt", "ci", "cd",
+]);
+
+function getImageCaption(url) {
+  const filename = url.split("/").pop().split("?")[0];
+  const withoutExt = filename.replace(/\.[^.]+$/, "");
+  const spaced = withoutExt
+    .replace(/[-_]+/g, " ")
+    .replace(/([a-zA-Z])(\d)/g, "$1 $2");
+
+  return spaced
+    .split(" ")
+    .filter(Boolean)
+    .map((word) => {
+      const lower = word.toLowerCase();
+      if (ACRONYMS.has(lower)) return lower.toUpperCase();
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projectController.getProjectById(id);
@@ -88,10 +111,7 @@ export default function ProjectDetail() {
             <h2>Key Features</h2>
             <ul className={styles.featuresList}>
               {project.features.map((feature) => (
-                <li key={feature}>
-                  <span className={styles.checkmark}>✓</span>
-                  {feature}
-                </li>
+                <li key={feature}>{feature}</li>
               ))}
             </ul>
           </section>
@@ -101,15 +121,22 @@ export default function ProjectDetail() {
             <section className={styles.section}>
               <h2>Project Gallery</h2>
               <div className={styles.gallery}>
-                {project.images.map((image, index) => (
-                  <img
+                {project.images.map((image) => (
+                  <figure
                     key={image}
-                    src={image}
-                    alt={`${project.title} screenshot ${index + 1}`}
-                    className={styles.galleryImage}
-                    loading="lazy"
+                    className={styles.galleryItem}
                     onClick={() => openLightbox(image)}
-                  />
+                  >
+                    <img
+                      src={image}
+                      alt={getImageCaption(image)}
+                      className={styles.galleryImage}
+                      loading="lazy"
+                    />
+                    <figcaption className={styles.galleryCaption}>
+                      {getImageCaption(image)}
+                    </figcaption>
+                  </figure>
                 ))}
               </div>
             </section>
@@ -125,12 +152,19 @@ export default function ProjectDetail() {
               >
                 ×
               </button>
-              <img
-                src={lightboxImage}
-                alt="Enlarged view"
-                className={styles.lightboxImage}
+              <figure
+                className={styles.lightboxFigure}
                 onClick={(e) => e.stopPropagation()}
-              />
+              >
+                <img
+                  src={lightboxImage}
+                  alt={getImageCaption(lightboxImage)}
+                  className={styles.lightboxImage}
+                />
+                <figcaption className={styles.lightboxCaption}>
+                  {getImageCaption(lightboxImage)}
+                </figcaption>
+              </figure>
             </div>
           )}
 
@@ -152,10 +186,9 @@ export default function ProjectDetail() {
             <h2>Technologies Used</h2>
             <div className={styles.techGrid}>
               {project.technologies.map((tech) => (
-                <div key={tech} className={styles.techItem}>
-                  <span className={styles.techIcon}>🔧</span>
-                  <span>{tech}</span>
-                </div>
+                <span key={tech} className={styles.techItem}>
+                  {tech}
+                </span>
               ))}
             </div>
           </section>
@@ -166,10 +199,9 @@ export default function ProjectDetail() {
               <h2>External APIs</h2>
               <div className={styles.techGrid}>
                 {project.apis.map((api) => (
-                  <div key={api} className={styles.techItem}>
-                    <span className={styles.techIcon}>🔌</span>
-                    <span>{api}</span>
-                  </div>
+                  <span key={api} className={styles.techItem}>
+                    {api}
+                  </span>
                 ))}
               </div>
             </section>

@@ -9,7 +9,7 @@ export default function ProjectsPage() {
   const [selectedTechs, setSelectedTechs] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const allTechs = useMemo(() => projectController.getAllTechnologies(), []);
+  const allTechs = useMemo(() => projectController.getFilterableSkills(), []);
   const filteredProjects = useMemo(
     () =>
       projectController.getFilteredProjects({
@@ -39,10 +39,9 @@ export default function ProjectsPage() {
       <div className={styles.projectsPage}>
         <div className={styles.header}>
           <div className={styles.container}>
-            <h1>All Projects</h1>
+            <h1>Projects</h1>
             <p>
-              Explore my complete portfolio of cloud engineering and DevOps
-              projects
+              Filter the full list by technology or search by keyword.
             </p>
           </div>
         </div>

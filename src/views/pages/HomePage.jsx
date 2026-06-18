@@ -1,48 +1,39 @@
 // Sheikh Khaled Ahmed (ei-sei) — All rights reserved
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
+import About from "../components/About";
 import ProjectCard from "../components/ProjectCard";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
-import { Link } from "react-router-dom";
 import { projectController } from "../../controllers/projectController";
 import styles from "./HomePage.module.css";
 
 export default function HomePage() {
-  const { projects, totalProjects, uniqueTechs } = useMemo(() => {
-    const allProjects = projectController.getProjects();
-    return {
-      projects: allProjects.slice(0, 3),
-      totalProjects: allProjects.length,
-      uniqueTechs: projectController.getAllTechnologies().length,
-    };
-  }, []);
+  const projects = useMemo(
+    () => projectController.getFeaturedProjects(),
+    []
+  );
 
   return (
     <Layout>
-      <Hero totalProjects={totalProjects} uniqueTechs={uniqueTechs} />
+      <Hero />
+      <About />
 
       <section id="projects" className={styles.projects}>
         <div className={styles.container}>
-          <div className={styles.header}>
-            <h2>Featured Projects</h2>
-            <p>
-              Showcasing my expertise in cloud engineering and DevOps
-            </p>
-          </div>
+          <h2 className={styles.heading}>Recent Projects</h2>
 
-          <div className={styles.grid}>
+          <div className={styles.list}>
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
 
-          <div className={styles.viewAll}>
-            <Link to="/projects" className={styles.btn}>
-              View All Projects →
-            </Link>
-          </div>
+          <Link to="/projects" className={styles.viewAllBtn}>
+            View All Projects
+          </Link>
         </div>
       </section>
 

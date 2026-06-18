@@ -1,13 +1,32 @@
 // Project Controller - Business Logic | Sheikh Khaled Ahmed (ei-sei)
 import { projectsData } from "../models/projectsData.js";
 
-// Cache for all technologies to avoid recalculation
-let technologiesCache = null;
+// Curated, in-demand skills shown in the filter UI, mapped to the
+// raw technology keywords they should match against project data.
+const FILTERABLE_SKILLS = {
+  AWS: ["aws", "amazon"],
+  Docker: ["docker"],
+  Terraform: ["terraform"],
+  Go: ["go"],
+  Python: ["python"],
+  React: ["react"],
+  PostgreSQL: ["postgresql"],
+  Nginx: ["nginx"],
+  Linux: ["linux"],
+  "CI/CD": ["github actions"],
+  IAM: ["iam"],
+  Redis: ["redis"],
+};
 
 export const projectController = {
   // Get all projects
   getProjects: () => {
     return projectsData;
+  },
+
+  // Get featured projects for homepage
+  getFeaturedProjects: () => {
+    return projectsData.filter((project) => project.featured);
   },
 
   // Get single project by ID
@@ -16,25 +35,9 @@ export const projectController = {
     return projectsData.find((project) => project.id === numId);
   },
 
-  // Filter projects by technology
-  filterProjectsByTech: (tech) => {
-    if (!tech) return projectsData;
-    const lowerTech = tech.toLowerCase();
-    return projectsData.filter((project) =>
-      project.technologies.some(
-        (t) => t.toLowerCase().includes(lowerTech)
-      )
-    );
-  },
-
-  // Get all technologies (cached)
-  getAllTechnologies: () => {
-    if (!technologiesCache) {
-      technologiesCache = Array.from(
-        new Set(projectsData.flatMap((p) => p.technologies))
-      ).sort();
-    }
-    return technologiesCache;
+  // Curated list of in-demand skills for the filter UI
+  getFilterableSkills: () => {
+    return Object.keys(FILTERABLE_SKILLS);
   },
 
   // Get projects by multiple filters
@@ -52,9 +55,13 @@ export const projectController = {
     }
 
     if (filters.technologies?.length > 0) {
-      const techSet = new Set(filters.technologies);
       filtered = filtered.filter((p) =>
-        p.technologies.some((pt) => techSet.has(pt))
+        filters.technologies.some((skill) => {
+          const keywords = FILTERABLE_SKILLS[skill] || [skill.toLowerCase()];
+          return p.technologies.some((pt) =>
+            keywords.some((keyword) => pt.toLowerCase().includes(keyword))
+          );
+        })
       );
     }
 

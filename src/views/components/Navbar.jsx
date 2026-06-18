@@ -1,12 +1,29 @@
 // Sheikh Khaled Ahmed — github.com/ei-sei
 import styles from "./Navbar.module.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  }, []);
 
   const scrollToSection = useCallback((sectionId) => {
     const element = document.getElementById(sectionId);
@@ -43,7 +60,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link to="/" className={styles.logo}>
-          Sheikh Khaled Ahmed
+          SHEIKH KHALED AHMED
         </Link>
 
         <button
@@ -57,20 +74,6 @@ export default function Navbar() {
         </button>
 
         <ul className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
-          <li>
-            <Link
-              to="/"
-              onClick={(e) => {
-                setIsOpen(false);
-                if (location.pathname === "/") {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-              }}
-            >
-              Home
-            </Link>
-          </li>
           <li>
             <a
               href="#projects"
@@ -105,6 +108,17 @@ export default function Navbar() {
             >
               Blog
             </a>
+          </li>
+          <li>
+            <button
+              className={styles.themeToggle}
+              onClick={toggleTheme}
+              aria-label="Toggle dark mode"
+            >
+              <span key={theme} className={styles.themeIcon}>
+                {theme === "light" ? <FiMoon /> : <FiSun />}
+              </span>
+            </button>
           </li>
         </ul>
       </div>

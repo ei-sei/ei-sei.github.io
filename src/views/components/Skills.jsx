@@ -6,10 +6,7 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.skills}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2>Technical Skills</h2>
-          <p>Proficient in modern cloud technologies and DevOps practices</p>
-        </div>
+        <h2 className={styles.heading}>Skills & Technologies</h2>
 
         <div className={styles.grid}>
           {skillCategories.map((category) => (
@@ -18,7 +15,6 @@ export default function Skills() {
               <div className={styles.skillsList}>
                 {category.skills.map((skill) => (
                   <div key={skill} className={styles.skillItem}>
-                    <span className={styles.skillDot}></span>
                     {skill}
                   </div>
                 ))}

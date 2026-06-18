@@ -263,7 +263,54 @@ export const projectsData = [
       "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/architecture.png",
   },
   {
+    id: 13,
+    featured: true,
+    title: "Headscale VPN on AWS ECS",
+    shortDescription:
+      "Self-hosted, Tailscale-compatible VPN control plane running on AWS ECS Fargate, coordinating a 5-node WireGuard mesh, with fully automated Terraform infrastructure and OIDC-secured GitHub Actions CI/CD.",
+    fullDescription:
+      "A self-hosted deployment of Headscale, the open-source control plane alternative to Tailscale, running serverless on AWS ECS Fargate rather than relying on a third-party SaaS coordinator. The Go binary is built via a multi-stage Docker image and deployed into private subnets with no public IP, fronted by a Network Load Balancer handling both the TCP control-plane API and UDP WireGuard tunnel traffic. All infrastructure is provisioned through five Terraform modules (VPC, ECR, ACM, NLB, ECS), and GitHub Actions deploys via OIDC federation into a tightly scoped IAM role, so no long-lived AWS credentials are stored in CI. The mesh currently coordinates 5 connected nodes.",
+    technologies: [
+      "Go",
+      "Docker",
+      "Terraform",
+      "AWS ECS Fargate",
+      "AWS ECR",
+      "AWS VPC",
+      "Network Load Balancer",
+      "AWS Certificate Manager",
+      "CloudWatch",
+      "IAM (OIDC)",
+      "GitHub Actions",
+      "Cloudflare DNS",
+    ],
+    features: [
+      "Self-hosted, Tailscale-compatible VPN control plane avoiding third-party SaaS dependency",
+      "Serverless Fargate deployment with tasks in private subnets and no public IP",
+      "Network Load Balancer with separate target groups for TCP control-plane (8080) and UDP WireGuard (41641)",
+      "Five reusable Terraform modules covering VPC, ECR, ACM, NLB, and ECS",
+      "GitHub Actions CI/CD via OIDC federation, no stored AWS credentials",
+      "PR-gated health-check workflow that builds, runs, and polls the container before merge",
+      "Terraform fmt/validate CI gate on every infrastructure pull request",
+      "ACM certificate validated automatically via Cloudflare DNS",
+    ],
+    challenges:
+      "Load balancing a mixed-protocol service (TCP control-plane API plus UDP WireGuard traffic) on one service, avoiding long-lived AWS credentials in CI, and keeping ECS tasks fully private while still publicly reachable.",
+    solutions:
+      "Used a Network Load Balancer with two target groups since NLBs support UDP at layer 4, unlike an ALB. Replaced stored AWS credentials with GitHub OIDC federation into an IAM role trust-restricted to the main branch ref. Kept ECS tasks in private subnets with NAT Gateway egress, exposing only the NLB publicly.",
+    githubUrl: "https://github.com/ei-sei/headscale-ecs",
+    liveUrl: "",
+    images: [
+      "https://raw.githubusercontent.com/ei-sei/headscale-ecs/main/assets/architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/headscale-ecs/main/assets/ecs-flowchart.png",
+      "https://raw.githubusercontent.com/ei-sei/headscale-ecs/main/assets/terraform-flowchart.png",
+    ],
+    thumbnail:
+      "https://raw.githubusercontent.com/ei-sei/headscale-ecs/main/assets/architecture.png",
+  },
+  {
     id: 11,
+    featured: true,
     title: "Watched",
     shortDescription:
       "Self-hosted, full-stack production app for tracking shows, movies, anime, and books. Built because nothing else did exactly what I wanted, running on my own VPS with real users.",
