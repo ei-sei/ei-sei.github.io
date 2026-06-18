@@ -10,6 +10,11 @@ export const projectController = {
     return projectsData;
   },
 
+  // Get featured projects for homepage
+  getFeaturedProjects: () => {
+    return projectsData.filter((project) => project.featured);
+  },
+
   // Get single project by ID
   getProjectById: (id) => {
     const numId = parseInt(id);

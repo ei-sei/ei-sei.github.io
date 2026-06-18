@@ -2,6 +2,7 @@
 export const projectsData = [
   {
     id: 3,
+    featured: true,
     title: "Penetration Testing: Metasploitable Report",
     shortDescription:
       "Comprehensive penetration testing engagement against a Metasploitable VM, documenting two critical exploits achieving full root access.",
@@ -264,6 +265,7 @@ export const projectsData = [
   },
   {
     id: 11,
+    featured: true,
     title: "Watched",
     shortDescription:
       "Self-hosted, full-stack production app for tracking shows, movies, anime, and books. Built because nothing else did exactly what I wanted, running on my own VPS with real users.",
