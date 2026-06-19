@@ -1,0 +1,32 @@
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.backToTop:hover {
+  background: var(--color-accent-dark);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .backToTop {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
