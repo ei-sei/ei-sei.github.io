@@ -1,6 +1,7 @@
 // Portfolio by Sheikh Khaled Ahmed
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import BackToTop from "./BackToTop";
 
 export default function Layout({ children }) {
   return (
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <BackToTop />
     </>
   );
 }
