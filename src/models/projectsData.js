@@ -347,7 +347,7 @@ export const projectsData = [
       "Multi-source search across APIs with inconsistent data structures, duplicates across providers, and varying response times. Offline-first sync required careful cache management to avoid stale reads. JWT refresh token rotation needed to be race-condition safe under concurrent requests.",
     solutions:
       "Parallel fan-out fires all API requests simultaneously; a deduplication and ranking layer normalises results before returning. Dexie/IndexedDB stores the full dataset locally so reads are instant and network-independent. Refresh token rotation uses a single in-flight promise so concurrent requests share one refresh cycle instead of competing.",
-    githubUrl: "",
+    githubUrl: "https://github.com/ei-sei/watched",
     liveUrl: "https://brsti.uk",
     demoVideo: "/videos/watched-demo.mp4",
     images: [
