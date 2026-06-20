@@ -349,7 +349,7 @@ export const projectsData = [
       "Parallel fan-out fires all API requests simultaneously; a deduplication and ranking layer normalises results before returning. Dexie/IndexedDB stores the full dataset locally so reads are instant and network-independent. Refresh token rotation uses a single in-flight promise so concurrent requests share one refresh cycle instead of competing.",
     githubUrl: "",
     liveUrl: "https://brsti.uk",
-    videoUrl: "https://youtu.be/ODx3OcgXz4E",
+    demoVideo: "/videos/watched-demo.mp4",
     images: [
       "/images/watched-dashboard.png",
       "/images/watched-search.png",

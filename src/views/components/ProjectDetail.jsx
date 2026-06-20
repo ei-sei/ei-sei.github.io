@@ -61,11 +61,6 @@ export default function ProjectDetail() {
     );
   }
 
-  const embedUrl = project.videoUrl
-    ? project.videoUrl.replace("youtu.be/", "www.youtube.com/embed/") +
-      "?rel=0&modestbranding=1"
-    : null;
-
   return (
     <article className={styles.detail}>
       <div className={styles.header}>
@@ -80,16 +75,14 @@ export default function ProjectDetail() {
         <div className={styles.mainContent}>
           {/* Hero Image or Video */}
           <section className={styles.heroImage}>
-            {embedUrl ? (
-              <div className={styles.videoWrapper}>
-                <iframe
-                  src={embedUrl}
-                  title={`${project.title} demo`}
-                  className={styles.videoFrame}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+            {project.demoVideo ? (
+              <video
+                src={project.demoVideo}
+                className={styles.video}
+                controls
+                playsInline
+                preload="metadata"
+              />
             ) : (
               <img
                 src={project.thumbnail}
@@ -219,16 +212,6 @@ export default function ProjectDetail() {
                   rel="noopener noreferrer"
                 >
                   View Code on GitHub
-                </a>
-              )}
-              {project.videoUrl && (
-                <a
-                  href={project.videoUrl}
-                  className={styles.btnVideo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Watch Demo
                 </a>
               )}
               {project.liveUrl && (
