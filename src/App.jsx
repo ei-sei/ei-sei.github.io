@@ -1,6 +1,7 @@
 // Built by Sheikh Khaled Ahmed (ei-sei) — All rights reserved
 import { lazy, Suspense } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./views/components/ScrollToTop";
 import "./styles/global.css";
 
 // Lazy load pages for code splitting
@@ -24,6 +25,7 @@ const PageLoader = () => (
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
