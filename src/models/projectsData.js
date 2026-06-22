@@ -5,9 +5,9 @@ export const projectsData = [
     featured: true,
     title: "Headscale VPN on AWS ECS",
     shortDescription:
-      "Self-hosted, Tailscale-compatible VPN control plane running on AWS ECS Fargate, coordinating a 5-node WireGuard mesh, with fully automated Terraform infrastructure and OIDC-secured GitHub Actions CI/CD.",
+      "Self-hosted Headscale (open-source Tailscale control plane) on AWS ECS Fargate, built from source with Terraform IaC and four GitHub Actions pipelines authenticated via OIDC.",
     fullDescription:
-      "A self-hosted deployment of Headscale, the open-source control plane alternative to Tailscale, running serverless on AWS ECS Fargate rather than relying on a third-party SaaS coordinator. The Go binary is built via a multi-stage Docker image and deployed into private subnets with no public IP, fronted by a Network Load Balancer handling both the TCP control-plane API and UDP WireGuard tunnel traffic. All infrastructure is provisioned through five Terraform modules (VPC, ECR, ACM, NLB, ECS), and GitHub Actions deploys via OIDC federation into a tightly scoped IAM role, so no long-lived AWS credentials are stored in CI. The mesh currently coordinates 5 connected nodes.",
+      "A self-hosted VPN control plane deployed on AWS ECS Fargate, containerised from source via a multi-stage Docker build. Infrastructure is fully defined in Terraform across six modules (VPC, ECR, ACM, NLB, ECS, OIDC), with remote state in S3 using native locking. CI/CD runs through four separate GitHub Actions pipelines (Terraform validate/plan, Terraform apply, Terraform destroy, and application build/deploy), all authenticated via GitHub's OIDC provider rather than long-lived AWS credentials. HTTPS is served end-to-end through ACM and Cloudflare DNS.",
     technologies: [
       "Go",
       "Docker",
@@ -15,6 +15,7 @@ export const projectsData = [
       "AWS ECS Fargate",
       "AWS ECR",
       "AWS VPC",
+      "Amazon S3",
       "Network Load Balancer",
       "AWS Certificate Manager",
       "CloudWatch",
@@ -23,14 +24,11 @@ export const projectsData = [
       "Cloudflare DNS",
     ],
     features: [
-      "Self-hosted, Tailscale-compatible VPN control plane avoiding third-party SaaS dependency",
-      "Serverless Fargate deployment with tasks in private subnets and no public IP",
-      "Network Load Balancer with separate target groups for TCP control-plane (8080) and UDP WireGuard (41641)",
-      "Five reusable Terraform modules covering VPC, ECR, ACM, NLB, and ECS",
-      "GitHub Actions CI/CD via OIDC federation, no stored AWS credentials",
-      "PR-gated health-check workflow that builds, runs, and polls the container before merge",
-      "Terraform fmt/validate CI gate on every infrastructure pull request",
-      "ACM certificate validated automatically via Cloudflare DNS",
+      "Designed and built four independent CI/CD pipelines, debugging real IAM permission gaps (S3 state access, OIDC trust policy scoping for PR vs push events, EC2/ECR/ACM/ELB/ECS resource management) one failed run at a time",
+      "Found and fixed an image-tag drift bug between the infrastructure and application pipelines, where Terraform's default :latest tag never matched what the deploy pipeline actually pushed, replacing a force-new-deployment call with proper task definition registration",
+      "Migrated from local Terraform state to a remote S3 backend with native state locking, including a separate bootstrap root with its own state for the state bucket and OIDC role itself",
+      "Diagnosed a multi-stage ECS crash-loop by reading CloudWatch logs after each fix attempt, ultimately replacing piecemeal environment variables with a single baked-in production config file",
+      "Verified the deployment end-to-end by registering a real Tailscale client against the live server and confirming bidirectional connectivity, not just a health-check response",
     ],
     challenges:
       "Load balancing a mixed-protocol service (TCP control-plane API plus UDP WireGuard traffic) on one service, avoiding long-lived AWS credentials in CI, and keeping ECS tasks fully private while still publicly reachable.",
@@ -38,6 +36,7 @@ export const projectsData = [
       "Used a Network Load Balancer with two target groups since NLBs support UDP at layer 4, unlike an ALB. Replaced stored AWS credentials with GitHub OIDC federation into an IAM role trust-restricted to the main branch ref. Kept ECS tasks in private subnets with NAT Gateway egress, exposing only the NLB publicly.",
     githubUrl: "https://github.com/ei-sei/headscale-ecs",
     liveUrl: "",
+    demoVideo: "/videos/headscale-demo.mp4",
     images: [
       "https://raw.githubusercontent.com/ei-sei/headscale-ecs/main/assets/architecture.png",
       "https://raw.githubusercontent.com/ei-sei/headscale-ecs/main/assets/ecs-flowchart.png",
