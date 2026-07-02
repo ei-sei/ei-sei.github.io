@@ -161,15 +161,20 @@ a:hover {
 
 /* Nav-triggered scroll highlight */
 @keyframes sectionHighlightPulse {
-  0%,
-  100% {
+  0% {
     background-color: transparent;
   }
   25% {
-    background-color: color-mix(in srgb, var(--color-accent) 15%, transparent);
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  }
+  65% {
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  }
+  100% {
+    background-color: transparent;
   }
 }
 
 .section-highlight {
-  animation: sectionHighlightPulse 1.4s ease-out;
+  animation: sectionHighlightPulse 2.2s ease-out;
 }

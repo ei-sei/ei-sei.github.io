@@ -41,7 +41,7 @@ export default function Navbar() {
       // Force reflow so the animation restarts if the class was already present
       void element.offsetWidth;
       element.classList.add("section-highlight");
-      setTimeout(() => element.classList.remove("section-highlight"), 1400);
+      setTimeout(() => element.classList.remove("section-highlight"), 2200);
     }
   }, []);
 
