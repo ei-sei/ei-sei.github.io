@@ -36,6 +36,12 @@ export default function Navbar() {
         top: offsetPosition,
         behavior: "smooth",
       });
+
+      element.classList.remove("section-highlight");
+      // Force reflow so the animation restarts if the class was already present
+      void element.offsetWidth;
+      element.classList.add("section-highlight");
+      setTimeout(() => element.classList.remove("section-highlight"), 1400);
     }
   }, []);
 

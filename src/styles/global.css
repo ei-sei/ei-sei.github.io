@@ -158,3 +158,18 @@ a:hover {
     font-size: 1.875rem;
   }
 }
+
+/* Nav-triggered scroll highlight */
+@keyframes sectionHighlightPulse {
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  25% {
+    background-color: color-mix(in srgb, var(--color-accent) 15%, transparent);
+  }
+}
+
+.section-highlight {
+  animation: sectionHighlightPulse 1.4s ease-out;
+}
