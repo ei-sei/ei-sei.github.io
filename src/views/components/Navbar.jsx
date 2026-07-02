@@ -62,10 +62,17 @@ export default function Navbar() {
     }
   }, [location.pathname, navigate, scrollToSection]);
 
+  const handleLogoClick = useCallback(() => {
+    setIsOpen(false);
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link to="/" className={styles.logo}>
+        <Link to="/" className={styles.logo} onClick={handleLogoClick}>
           SHEIKH KHALED AHMED
         </Link>
 
