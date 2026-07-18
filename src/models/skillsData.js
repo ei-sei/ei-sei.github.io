@@ -2,7 +2,7 @@
 export const skillCategories = [
   {
     name: "Cloud Platforms",
-    skills: ["AWS", "Azure", "Google Cloud", "DigitalOcean", "Linode"],
+    skills: ["AWS", "Oracle", "DigitalOcean"],
   },
   {
     name: "Container & Orchestration",
@@ -10,18 +10,18 @@ export const skillCategories = [
   },
   {
     name: "Infrastructure as Code",
-    skills: ["Terraform", "CloudFormation", "Ansible", "Pulumi", "Vagrant"],
+    skills: ["Terraform", "CloudFormation"],
   },
   {
     name: "CI/CD & DevOps",
-    skills: ["Jenkins", "GitLab CI", "GitHub Actions", "CircleCI", "ArgoCD"],
+    skills: ["GitHub Actions", "Jenkins", "GitLab CI",  "CircleCI", "ArgoCD"],
   },
   {
     name: "Monitoring & Logging",
-    skills: ["Prometheus", "Grafana", "CloudWatch", "ELK Stack", "Jaeger"],
+    skills: ["Prometheus", "Grafana", "CloudWatch", "ELK Stack"],
   },
   {
     name: "Programming Languages",
-    skills: ["Python", "Bash", "JavaScript", "Go", "Java"],
+    skills: ["Python", "Bash", "JavaScript", "Go"],
   },
 ];
