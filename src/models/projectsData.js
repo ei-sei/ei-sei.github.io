@@ -167,15 +167,15 @@ export const projectsData = [
     solutions:
       "Hand-crafted inline IAM policies granting only the specific DynamoDB action needed (PutItem or Scan) scoped to the exact table ARN, configured usage plans with API key linkage on each method, and deployed a WAF Web ACL with a rate-based rule targeting the API Gateway stage.",
     githubUrl:
-      "https://github.com/ei-sei/DevOps/tree/aws/lab/04-serverless-api-with-lambda-iam-api-gateway",
+      "https://github.com/ei-sei/DevOps/tree/main/aws/lab/04-serverless-api-with-lambda-iam-api-gateway",
     liveUrl: "",
     images: [
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/architecture.png",
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/test3.png",
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/test-DynamoDB.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/04-lab/architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/04-lab/test3.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/04-lab/test-DynamoDB.png",
     ],
     thumbnail:
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/04-lab/architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/04-lab/architecture.png",
   },
   {
     id: 9,
@@ -209,14 +209,14 @@ export const projectsData = [
     solutions:
       "Explicitly provisioned the ACM certificate in us-east-1, triggered CloudFront cache invalidation at the end of every GitHub Actions workflow, and used Lambda@Edge to intercept and rewrite extension-less requests before CloudFront served content.",
     githubUrl:
-      "https://github.com/ei-sei/DevOps/tree/aws/lab/03-s3-cloudfront-route53",
+      "https://github.com/ei-sei/DevOps/tree/main/aws/lab/03-s3-cloudfront-route53",
     liveUrl: "",
     images: [
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/03-lab/architecture.png",
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/03-lab/test3.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/03-lab/architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/03-lab/test3.png",
     ],
     thumbnail:
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/03-lab/architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/03-lab/architecture.png",
   },
   {
     id: 8,
@@ -251,13 +251,13 @@ export const projectsData = [
     solutions:
       "Layered security groups so only the ALB security group is whitelisted on EC2 instances, validated ACM certificates via DNS, and configured the Auto Scaling Group to register new instances automatically into the ALB target group.",
     githubUrl:
-      "https://github.com/ei-sei/DevOps/tree/aws/lab/02-application-load-balancer",
+      "https://github.com/ei-sei/DevOps/tree/main/aws/lab/02-application-load-balancer",
     liveUrl: "",
     images: [
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/02-lab/ALB-architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/02-lab/ALB-architecture.png",
     ],
     thumbnail:
-      "https://raw.githubusercontent.com/ei-sei/DevOps/aws/assets/02-lab/ALB-architecture.png",
+      "https://raw.githubusercontent.com/ei-sei/DevOps/main/aws/assets/02-lab/ALB-architecture.png",
   },
   {
     id: 7,
@@ -291,7 +291,7 @@ export const projectsData = [
     solutions:
       "Created distinct route tables directing public traffic through IGW and private traffic through NAT Gateway, configured SSH agent forwarding for secure key management across the bastion hop, and attached IAM roles with CloudWatchAgentServerPolicy to EC2 instances for monitoring.",
     githubUrl:
-      "https://github.com/ei-sei/DevOps/tree/aws/lab/vpc-and-networking",
+      "https://github.com/ei-sei/DevOps/tree/main/aws/lab/01-vpc-networking",
     liveUrl: "",
     images: ["/images/vpc-networking-architecture.png"],
     thumbnail: "/images/vpc-networking-architecture.png",
@@ -325,7 +325,7 @@ export const projectsData = [
       "Configuring container-to-container networking, ensuring Redis data persistence across restarts, and setting up Nginx as a reverse proxy for multiple scaled Flask instances.",
     solutions:
       "Used Docker Compose networks for inter-container communication, enabled Redis AOF persistence for durability, configured Nginx upstream load balancing, and used environment variables to keep configuration flexible.",
-    githubUrl: "https://github.com/ei-sei/DevOps/tree/docker-lab",
+    githubUrl: "https://github.com/ei-sei/DevOps/tree/main/docker/projects/flask-redis",
     liveUrl: "",
     images: [
       "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800",
@@ -357,7 +357,7 @@ export const projectsData = [
       "Configuring DNS propagation through Cloudflare, securing the EC2 instance with appropriate security groups, and understanding the full networking stack from L1 to L7.",
     solutions:
       "Set up Cloudflare as the authoritative DNS provider with correct A records pointing to the EC2 public IP, configured AWS security groups to allow HTTP/HTTPS/SSH traffic, and documented networking fundamentals as reference material alongside the lab.",
-    githubUrl: "https://github.com/ei-sei/DevOps/tree/networking",
+    githubUrl: "https://github.com/ei-sei/DevOps/tree/main/networking",
     liveUrl: "",
     images: [
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
